@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from . import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -8,6 +9,7 @@ urlpatterns = [
     url(r'^customer/(?P<pk>\d+)/delete/$', views.customer_delete, name='customer_delete'),
     url(r'^customer/(?P<pk>\d+)/edit/$', views.customer_edit, name='customer_edit'),
     url(r'^customer/(?P<pk>\d+)/portfolio/$', views.portfolio, name='portfolio'),
+    url(r'^customers_json/', views.CustomerList.as_view()),
     url(r'^stock/$', views.stock_list, name='stock_list'),
     url(r'^stock/(?P<pk>\d+)/delete/$', views.stock_delete, name='stock_delete'),
     url(r'^stock/(?P<pk>\d+)/edit/$', views.stock_edit, name='stock_edit'),
@@ -20,4 +22,10 @@ urlpatterns = [
     url(r'^mutualfund/(?P<pk>\d+)/delete/$', views.mutualfund_delete, name='mutualfund_delete'),
     url(r'^mutualfund/(?P<pk>\d+)/edit/$', views.mutualfund_edit, name='mutualfund_edit'),
     url(r'^mutualfund/create/$', views.mutualfund_new, name='mutualfund_new'),
+
+    # url(r'^customers_json/', views.CustomerList.as_view()),
+    url(r'^register/$', views.register, name='register'),
+    url(r'^register/success/$', views.register_success, name='success'),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
