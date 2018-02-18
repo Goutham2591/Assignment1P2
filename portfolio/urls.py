@@ -1,6 +1,9 @@
 from django.conf.urls import url
 from . import views
 from rest_framework.urlpatterns import format_suffix_patterns
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -26,6 +29,10 @@ urlpatterns = [
     # url(r'^customers_json/', views.CustomerList.as_view()),
     url(r'^register/$', views.register, name='register'),
     url(r'^register/success/$', views.register_success, name='success'),
+
+    # password reset
+
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

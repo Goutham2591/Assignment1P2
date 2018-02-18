@@ -273,3 +273,21 @@ def register(request):
 
 def register_success(request):
     return render(request, 'registration/success.html',  )
+
+
+def password_reset(request):
+    return render(request, 'home/password_reset.html',
+    {'home': password_reset})
+
+
+def password_reset_confirm(request):
+    return render(request, 'home/password_reset_confirm.html',
+    {'home': password_reset_confirm})
+
+def password_reset_email(request):
+    return render(request, 'home/password_reset_email.html',
+    {'home': password_reset_email})
+
+def password_reset_complete(request):
+    return render(request, 'home/password_reset_complete.html',
+    {'home': password_reset_complete})

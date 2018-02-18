@@ -25,6 +25,14 @@ SECRET_KEY = 'ovtxj)hnb04z2=k8ic*)0vg7czj+00be)j2g*m3btp@njzkjns'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'gouthammdc@gmail.com'
+    EMAIL_HOST_PASSWORD = 'test@12345'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'omkidsorg@gmail.com'
+
 ALLOWED_HOSTS = []
 
 
